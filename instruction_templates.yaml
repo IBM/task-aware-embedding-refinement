@@ -1,0 +1,24 @@
+model_templates:
+  Default:
+    query_template: "Instruct: {instruction}\nQuery: {text}"
+    document_template: "{text}"
+
+dataset_instructions:
+  FollowIR:
+    instruction: "Retrieve text based on a fine-grained user query."
+    task_type: search
+  KPM:
+    instruction: "Given an argument, identify utterances from debates that convey this argument."
+    task_type: classification
+  RealScholarQuery:
+    instruction: "Given a fine-grained scientific inquiry, retrieve academic publications that strictly align with the specified research topic, methodology, and constraints."
+    task_type: search
+  NFCorpus:
+    instruction: "Given a question, retrieve relevant documents that best answer the question."
+    task_type: search
+  Banking77:
+    instruction: "Given an intent category, identify utterances that express this intent."
+    task_type: classification
+  Clinc150:
+    instruction: "Given an intent description, identify utterances that express this intent."
+    task_type: classification

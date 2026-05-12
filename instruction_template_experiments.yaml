@@ -1,0 +1,50 @@
+experiments:
+  # Baseline: minimal structure, no instruction injected
+  baseline_no_instruction:
+    query_template: "{text}"
+    document_template: "{text}"
+    description: "No instruction, plain query/document"
+
+  # "Default" (matches instruction_templates.yaml model_templates.Default)
+  default_instruct_query:
+    query_template: "Instruct: {instruction}\nQuery: {text}"
+    document_template: "{text}"
+    description: "Default Instruct/Query format"
+
+  # Instruction formatting variations
+  instruction_prefix:
+    query_template: "{instruction}\n{text}"
+    document_template: "{text}"
+    description: "Instruction as a simple prefix"
+
+  task_format:
+    query_template: "Task: {instruction}\n\n{text}"
+    document_template: "{text}"
+    description: "Task: ... then blank line then query"
+
+  retrieve_format:
+    query_template: "Retrieve relevant documents. {instruction}\nQuery: {text}"
+    document_template: "{text}"
+    description: "Explicit retrieval framing"
+
+# Per-dataset instruction variants - list of instruction strings to sweep
+dataset_instruction_variants:
+  KPM:
+    - "Given an argument, identify utterances from debates that convey this argument."
+    - "Retrieve debate utterances that semantically match and explicitly express the core argument provided."
+
+  RealScholarQuery:
+    - "Given a fine-grained scientific inquiry, retrieve academic publications that strictly align with the specified research topic, methodology, and constraints."
+    - "Retrieve academic publications that comprehensively address the research topic, methodology, and specific constraints detailed in the scientific inquiry."
+
+  NFCorpus:
+    - "Given a question, retrieve relevant documents that best answer the question."
+    - "Retrieve relevant medical documents and passages that directly answer the user's health-related question."
+
+  Banking77:
+    - "Given an intent category, identify utterances that express this intent."
+    - "Retrieve banking customer service utterances that clearly express the given intent category."
+
+  Clinc150:
+    - "Given an intent description, identify utterances that express this intent."
+    - "Retrieve user utterances that align with the specific intent description provided, distinguishing them from out-of-scope inputs."

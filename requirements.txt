@@ -1,0 +1,12 @@
+unitxt==1.26.9
+scikit-learn==1.8.0
+transformers[torch]==4.57.5
+sentence-transformers==5.2.0
+langchain-huggingface==1.2.0
+seaborn==0.13.2
+mteb==2.7.2
+openai==2.15.0
+beir==2.2.0
+sentencepiece==0.2.1
+protobuf==6.33.5
+python-dotenv==1.0.1
