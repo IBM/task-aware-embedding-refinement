@@ -29,7 +29,7 @@ experiments:
 
 # Per-dataset instruction variants - list of instruction strings to sweep
 dataset_instruction_variants:
-  KPM:
+  ArgKP21:
     - "Given an argument, identify utterances from debates that convey this argument."
     - "Retrieve debate utterances that semantically match and explicitly express the core argument provided."
 

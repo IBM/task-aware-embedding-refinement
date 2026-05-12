@@ -25,12 +25,12 @@ class Dataset:
         raise NotImplementedError
 
 
-class KPM(Dataset):
+class ArgKP21(Dataset):
     dataset_name = "keypoint_matching"
 
     def load_gold(self, splits=("dev", "train")):
         """
-        Load KPM (Key Point Matching) dataset from GitHub.
+        Load ArgKP21 (Key Point Matching) dataset from GitHub.
         
         Downloads the dataset from https://github.com/IBM/KPA_2021_shared_task
         and extracts the kpm_data directory.
@@ -50,11 +50,11 @@ class KPM(Dataset):
             zip_path = os.path.join(data_dir, "KPA_2021_shared_task.zip")
             url = "https://github.com/IBM/KPA_2021_shared_task/archive/refs/heads/main.zip"
             
-            print(f"Downloading KPM dataset from {url}...")
+            print(f"Downloading ArgKP21 dataset from {url}...")
             urllib.request.urlretrieve(url, zip_path)
             
             # Extract the zip file
-            print("Extracting KPM dataset...")
+            print("Extracting ArgKP21 dataset...")
             with zipfile.ZipFile(zip_path, 'r') as zip_ref:
                 zip_ref.extractall(data_dir)
             
@@ -70,7 +70,7 @@ class KPM(Dataset):
             if os.path.exists(extracted_dir):
                 shutil.rmtree(extracted_dir)
             
-            print("KPM dataset downloaded and extracted successfully.")
+            print("ArgKP21 dataset downloaded and extracted successfully.")
         
         query_to_rows = defaultdict(list)
         for split in splits:
@@ -395,7 +395,7 @@ class Clinc150(Dataset):
 
 @dataclass
 class Datasets:
-    KPM = KPM
+    ArgKP21 = ArgKP21
     RealScholarQuery = RealScholarQuery
     FollowIR = FollowIR
     NFCorpus = NFCorpus

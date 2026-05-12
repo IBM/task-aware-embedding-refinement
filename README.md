@@ -137,7 +137,7 @@ The repository currently supports the following datasets through `dataset_loader
 | Dataset | Description | Reference |
 |---------|-------------|-----------|
 | 🎓 **RealScholarQuery** | Real-world academic search queries over arXiv CS papers | [He et al., 2025](https://aclanthology.org/2025.acl-long.572/) |
-| 🔑 **KPM** | Key-point matching from 2021 KPA shared task | [Friedman et al., 2021](https://aclanthology.org/2021.argmining-1.16/) |
+| 🔑 **ArgKP-21** | Key-point matching from 2021 KPA shared task | [Friedman et al., 2021](https://aclanthology.org/2021.argmining-1.16/) |
 | 📋 **FollowIR** | Information retrieval from TREC relevance narratives | [Weller et al., 2025](https://aclanthology.org/2025.naacl-long.597/) |
 | 💬 **Clinc150** | Intent classification with 150 intents across 10 domains | [Larson et al., 2019](https://arxiv.org/abs/1909.02027) |
 | 🏦 **Banking77** | Banking domain with 77 fine-grained intent categories | [Casanueva et al., 2020](https://aclanthology.org/2020.nlp4convai-1.5/) |
@@ -258,7 +258,7 @@ Thus, much of the experiment runtime is devoted to the one-time cost of computin
 Running the full experiment on **all datasets**, including embedding all corpus documents and optimizing all the queries, should take about an hour.
 
 - Using **larger embedding models**, like *Qwen/Qwen3-Embedding-8B*:
-  - Embedding corpus documents with 7B/8B models can range from a few minutes for small datasets (e.g., *KPM*) to 3-4 hours for larger datasets like *RealScholarQuery* or *FollowIR*.
+  - Embedding corpus documents with 7B/8B models can range from a few minutes for small datasets (e.g., *ArgKP-21*) to 3-4 hours for larger datasets like *RealScholarQuery* or *FollowIR*.
   - Note that for datasets with long documents (e.g., FollowIR), it may be necessary to use a small `--embedder_batch_size` to avoid running out of GPU memory.
 
 ---

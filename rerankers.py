@@ -349,12 +349,12 @@ def get_reranker(model_name: str, cache_dir: str | Path, task_instruction=None):
 
 
 if __name__ == '__main__':
-    from dataset_loaders import KPM
+    from dataset_loaders import ArgKP21
     import random
     
-    # Load KPM dataset
-    print("Loading KPM dataset...")
-    kpm = KPM()
+    # Load ArgKP dataset
+    print("Loading ArgKP dataset...")
+    kpm = ArgKP21()
     query_to_label_series = kpm.load_gold(splits=("dev",))
     
     # Sample a few queries

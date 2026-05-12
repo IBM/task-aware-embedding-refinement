@@ -23,7 +23,7 @@ DEFAULT_MODELS = [
 
 DEFAULT_DATASETS = [
     "RealScholarQuery",
-    "KPM",
+    "ArgKP21",
     "FollowIR",
     "Clinc150",
     "Banking77",

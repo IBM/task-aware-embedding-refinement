@@ -7,7 +7,7 @@ dataset_instructions:
   FollowIR:
     instruction: "Retrieve text based on a fine-grained user query."
     task_type: search
-  KPM:
+  ArgKP21:
     instruction: "Given an argument, identify utterances from debates that convey this argument."
     task_type: classification
   RealScholarQuery:
