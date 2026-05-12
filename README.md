@@ -238,6 +238,29 @@ output/
     ├── tensors/                   # Query trajectory tensors (if enabled)
     └── config.json                # Experiment configuration metadata
 ```
+
+---
+
+## ⏱️ Runtime Estimates
+
+The total runtime of the experiments consists of two main components:
+
+1. **Document embeddings** — Embedding all documents in the corpus. In a deployment environment this would typically be done offline.
+2. **Per-query computations** — Query embedding, refinement optimization, and LLM teacher feedback.
+
+Per-query latency with a GPU is well under a second per query, as shown in the paper. This means just a few minutes to run all the queries in a dataset, assuming an efficient model endpoint for obtaining the LLM feedback scores.
+
+Thus, much of the experiment runtime is devoted to the one-time cost of computing the corpus document embeddings. For convenience, it is possible to run this initial step separately using the script `embed_all_documents.py`.
+
+**Runtime estimates on a single A100-80GB GPU:**
+
+- Using a **small embedding model**, like *Qwen/Qwen3-Embedding-0.6B*: 
+Running the full experiment on **all datasets**, including embedding all corpus documents and optimizing all the queries, should take about an hour.
+
+- Using **larger embedding models**, like *Qwen/Qwen3-Embedding-8B*:
+  - Embedding corpus documents with 7B/8B models can range from a few minutes for small datasets (e.g., *KPM*) to 3-4 hours for larger datasets like *RealScholarQuery* or *FollowIR*.
+  - Note that for datasets with long documents (e.g., FollowIR), it may be necessary to use a small `--embedder_batch_size` to avoid running out of GPU memory.
+
 ---
 
 ## 📝 Notes
