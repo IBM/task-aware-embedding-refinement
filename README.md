@@ -24,7 +24,7 @@ At test time, given a user query, the query embedding is optimized with gradient
 
 ### 📄 Paper
 
-> **Task-Aware Embedding Refinement via Test-time LLM Guidance**  
+> **[Task-Adaptive Embedding Refinement via Test-time LLM Guidance](https://arxiv.org/abs/2605.12487)**  
 > *Ariel Gera, Shir Ashury-Tahan, Gal Bloch, Ohad Eytan, Assaf Toledo*
 
 ---
@@ -276,9 +276,11 @@ Running the full experiment on **all datasets**, including embedding all corpus 
 If you use this code in your research, please cite our paper:
 
 ```bibtex
-@article{gera2026taskaware,
-  title={Task-Aware Embedding Refinement via Test-time LLM Guidance},
+@article{gera2026taskadaptive,
+  title={Task-Adaptive Embedding Refinement via Test-time LLM Guidance},
   author={Gera, Ariel and Ashury-Tahan, Shir and Bloch, Gal and Eytan, Ohad and Toledo, Assaf},
-  year={2026}
+  year={2026},
+  journal={arXiv:2605.12487},
+  url={https://arxiv.org/abs/2605.12487},
 }
 ```
