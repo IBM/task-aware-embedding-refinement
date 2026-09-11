@@ -9,4 +9,4 @@ openai==2.15.0
 beir==2.2.0
 sentencepiece==0.2.1
 protobuf==6.33.5
-python-dotenv==1.0.1
+python-dotenv==1.2.2
