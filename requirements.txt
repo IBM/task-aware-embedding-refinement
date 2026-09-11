@@ -1,6 +1,6 @@
 unitxt==1.26.9
 scikit-learn==1.8.0
-transformers[torch]==4.57.5
+transformers[torch]==5.10.1
 sentence-transformers==5.2.0
 langchain-huggingface==1.2.0
 seaborn==0.13.2
